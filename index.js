@@ -43,9 +43,9 @@ const getter = (() => ({
 
   run() {
     const object = queue.shift();
+    if (!queue.length && !this.failed) putIdenticatorBackground('queue', true);
 
     if (!object) {
-      if (!this.failed) putIdenticatorBackground('queue', true);
       this.ms = GETTER_TIMEOUT + ++this.failed * MS;
       return;
     }
