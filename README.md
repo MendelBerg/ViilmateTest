@@ -2,7 +2,7 @@
 
 ### https://adoring-rosalind-33af9d.netlify.app/
 
-Calendar for time control with the ability to create and delete events.
+The application with the ability to generate objects and show amount of objects which includes property (number type) in range 1-100 in three columns (<30, <70, <=100).
 
 ### The tech stack is:
  - [HTML5](https://en.wikipedia.org/wiki/HTML5)
