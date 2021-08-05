@@ -7,7 +7,6 @@ The application with the ability to generate objects and show amount of objects 
 ### The tech stack is:
  - [HTML5](https://en.wikipedia.org/wiki/HTML5)
  - [CSS3](https://en.wikipedia.org/wiki/CSS)
- - [Sass (Scss)](https://sass-lang.com/)
  - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Author
