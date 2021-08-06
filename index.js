@@ -24,9 +24,7 @@ const putIdenticatorBackground = (identicatorName, isOff) => {
 };
 
 /*
-Creating a generator by IIFE (Immediately Invoked Function Expression).
-
-The function returns an object which has the following properties:
+Creating a generator - is an object which has the following properties:
 name - name of object, it is used in cases when we need to set new background color for the identicator 
 stop - status of method run working in function timeOutWrapper. Values can be: true, false.
 timerId - contains the timer id which it get in function timeOutWrapper.
@@ -34,7 +32,7 @@ ms - milliseconds. It is used for setting the second parameter in setTimeout.
 run - method, pushes into queue new object with one property - number in range [1,100]. In cases when queue is empty, method calls putIdenticatorBackground to set the red color for identicator. At the end method run generate new random amount for property ms in range [1,10] seconds.
 */
 
-const generator = (() => ({
+const generator = {
   name: 'generator',
   stop: true,
   timerId: null,
@@ -49,12 +47,10 @@ const generator = (() => ({
 
     this.ms = (Math.floor(Math.random() * (10 - 1 + 1)) + 1) * MS;
   },
-}))();
+};
 
 /*
-Creating a getter by IIFE (Immediately Invoked Function Expression).
-
-The function returns an object which has the following properties:
+Creating a getter - is an object which has the following properties:
 name - name of object, it is used in cases when we need to set new background color for the identicator 
 stop - status of method run working in function timeOutWrapper. Values can be: true, false.
 timerId - contains the timer id which it get in function timeOutWrapper.
@@ -70,7 +66,7 @@ The method gets a number property from gotten object. Using this value in ternar
 At the end run method calls putCounterText and increment the value of one of counters property.
 */
 
-const getter = (() => ({
+const getter = {
   name: 'getter',
   stop: true,
   timerId: null,
@@ -101,7 +97,7 @@ const getter = (() => ({
     const counterNumber = data < 30 ? 1 : data < 70 ? 2 : 3;
     putCounterText(counterNumber, ++this.counters[counterNumber]);
   },
-}))();
+};
 
 /*
 resetCount - function. It set the initial value (0) for property "counters" of getter and it calls putCounterText to set these values into markup.
